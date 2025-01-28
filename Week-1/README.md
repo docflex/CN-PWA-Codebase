@@ -354,5 +354,3 @@ Add icons with the recommended sizes:
 1. Open the app in Chrome.
 2. Right-click > Inspect > Lighthouse.
 3. Generate a Lighthouse report to verify PWA compliance.
-
-This boilerplate provides a foundation for your students to begin building their PWAs. Let me know if you'd like additional advanced features or enhancements!
