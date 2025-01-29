@@ -42,9 +42,42 @@ li {
     padding: 10px;
     border-bottom: 1px solid #ddd;
     cursor: pointer;
+    transform-origin: left;
+    transition: all 0.3s ease-in-out;
 }
 
 li.completed {
     text-decoration: line-through;
     color: gray;
+    transform: scale(1.1);
+    background-color: #d4edda;
+}
+
+.task-appear {
+    opacity: 0;
+    animation: slideIn 0.5s forwards;
+}
+
+.task-toggle {
+    animation: taskToggle 0.3s ease-in-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes taskToggle {
+    0% {
+        background-color: transparent;
+    }
+    100% {
+        background-color: #ffd700;
+    }
 }
