@@ -1,0 +1,16 @@
+{
+    "name": "Weather App",
+    "short_name": "Weather",
+    "description": "Get real-time weather updates.",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#0078d4",
+    "icons": [
+        {
+            "src": "/favicon.ico",
+            "sizes": "192x192",
+            "type": "image/png"
+        }
+    ]
+}
