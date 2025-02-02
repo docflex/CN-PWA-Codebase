@@ -1,0 +1,38 @@
+body {
+    font-family: "Arial", sans-serif;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-top: 20px;
+    color: #333;
+}
+
+#gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 20px;
+}
+
+button:hover {
+    background-color: #218838;
+}
