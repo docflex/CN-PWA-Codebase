@@ -1,0 +1,33 @@
+body {
+    font-family: "Arial", sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+}
+
+#news-list {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+    max-width: 600px;
+    margin: auto;
+}
+
+.news-item {
+    background-color: white;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+button {
+    margin: 20px;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
