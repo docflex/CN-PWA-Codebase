@@ -2,7 +2,7 @@
     "name": "PWA Cache Versioning Example",
     "short_name": "PWA Cache Versioning",
     "description": "A simple PWA demonstrating cache versioning strategies for offline support and performance.",
-    "start_url": "/",
+    "start_url": "../pages/index.html",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#4CAF50",
