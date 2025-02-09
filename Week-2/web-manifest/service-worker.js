@@ -4,6 +4,7 @@ const ASSETS = [
     "./assets/favicon-512x512.png",
     "./index.html",
     "./styles.css",
+    '/' // Remove this
 ];
 
 self.addEventListener("install", (event) => {
@@ -22,6 +23,6 @@ self.addEventListener("fetch", (event) => {
             .then((response) => {
                 return response || fetch(event.request);
             })
-            .catch(() => caches.match("./index.html"))
+            // .catch(() => caches.match("./index.html")) // Why this?
     );
 });
