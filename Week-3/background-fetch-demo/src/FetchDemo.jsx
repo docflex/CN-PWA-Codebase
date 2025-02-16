@@ -19,7 +19,7 @@ const FetchDemo = () => {
             try {
                 const bgFetch = await registration.backgroundFetch.fetch(
                     "bg-fetch-demo",
-                    ["vite.svg"],
+                    ["data.json"],
                     {
                         title: "Background Fetch Example",
                         icons: [{ sizes: "192x192", src: "vite.svg", type: "image/png" }],
