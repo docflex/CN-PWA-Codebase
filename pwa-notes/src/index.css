@@ -1,0 +1,247 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Arial", sans-serif;
+}
+
+/* Light Theme (Default) */
+:root {
+    --bg-color: #f4f4f4;
+    --text-color: #333;
+    --container-bg: #ffffff;
+    --button-bg: #007bff;
+    --button-hover-bg: #0056b3;
+    --note-bg: #ffffff;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Theme */
+.dark-mode {
+    --bg-color: #1e1e1e;
+    --text-color: #f4f4f4;
+    --container-bg: #2c2c2c;
+    --button-bg: #007bff;
+    --button-hover-bg: #0056b3;
+    --note-bg: #3a3a3a;
+    --shadow-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Background Animation */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    position: relative;
+    overflow: auto; /* Allow scrolling */
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* Moving Background Pattern */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(var(--shadow-color) 2px, transparent 2px);
+    background-size: 20px 20px;
+    opacity: 0.2;
+    animation: moveBackground 10s linear infinite;
+    z-index: -1;
+}
+
+@keyframes moveBackground {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 100px 100px;
+    }
+}
+
+/* App Container */
+.app-container {
+    width: 100%;
+    max-width: 500px;
+    background: var(--container-bg);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px var(--shadow-color);
+    text-align: center;
+    transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    position: relative;
+    z-index: 1;
+
+    max-height: 90vh; /* Prevents overflowing the screen */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Header */
+h1 {
+    margin: 20px 30px;
+    /* margin-top: 40px; */
+    font-size: 1.8rem;
+    /* margin-bottom: 20px; */
+}
+
+/* Note Form */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+    resize: none;
+    background: var(--container-bg);
+    color: var(--text-color);
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+button {
+    background: var(--button-bg);
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+button:hover {
+    background: var(--button-hover-bg);
+}
+
+/* Notes List */
+.note-list {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    flex-grow: 1; /* Takes up remaining space */
+    overflow-y: auto; /* Enables scrolling */
+    max-height: 60vh; /* Prevents it from growing too tall */
+    padding-right: 5px; /* Avoids scrollbar overlap */
+}
+
+/* Hide scrollbar for better UI */
+.note-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.note-list::-webkit-scrollbar-thumb {
+    background: var(--shadow-color);
+    border-radius: 3px;
+}
+
+.note-list p {
+    text-align: center;
+}
+
+/* Note Item */
+.note {
+    background: var(--note-bg);
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px var(--shadow-color);
+    font-size: 1rem;
+    text-align: left;
+    transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Status Bar */
+.status-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* Network Status */
+.network-status {
+    padding: 10px;
+    color: white;
+    font-size: 0.9rem;
+    text-align: center;
+    border-radius: 5px;
+    flex-grow: 1;
+}
+
+.online {
+    background: #28a745;
+}
+
+.offline {
+    background: #dc3545;
+}
+
+/* Dark Mode Toggle */
+.dark-mode-toggle {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 200;
+    background: var(--container-bg);
+    color: var(--text-color);
+    border: 2px solid var(--text-color);
+    padding: 10px 14px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.2s;
+    box-shadow: 0px 2px 8px var(--shadow-color);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Hover & Active Effects */
+.dark-mode-toggle:hover {
+    background: var(--text-color);
+    color: var(--bg-color);
+}
+
+.dark-mode-toggle:active {
+    transform: scale(0.95);
+}
+
+/* Add subtle glowing effect in dark mode */
+.dark-mode .dark-mode-toggle {
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Smooth Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.note,
+.network-status,
+.update-prompt {
+    animation: fadeIn 0.5s ease-in-out;
+}
